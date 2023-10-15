@@ -1,0 +1,78 @@
+<!doctype html>
+<html  class="no-js" ng-app="a11yTicketApp" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="title">Ticket Tracker</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="container" >
+    <div class="header">
+      <h1 class="logo">Ticket Tracker</h1>
+      <nav id="top-nav" class="pull-right">
+        <ul class="nav nav-pills" ng-controller="HeaderController">
+          <li ng-class="{ active: isActive('/main')}">
+            <a ng-href="#/main">
+              Home 
+              <span class="visuallyhidden"> - currently selected</span>
+            </a>
+          </li>
+          <li ng-class="{ active: isActive('/about')}">
+            <a ng-href="#/about">Elements 
+              <span class="visuallyhidden"> - currently selected</span>
+            </a>
+          </li>
+          <li ng-class="{ active: isActive('/create')}">
+              <a ng-href="#/create" id="add-new-ticket">Add new ticket</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main" id="main" role="main">
+      <div ng-view=""></div>
+    </div>
+    <div class="footer">
+      <p>Copyright © ABC Accessible Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/es5-shim/es5-shim.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="../bower_components/json3/lib/json3.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/ngstorage/ngStorage.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="../bower_components/mockfirebase/dist/mockfirebase.js"></script>
+    <script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/factories.js"></script>
+    <script src="scripts/directives.js"></script>
+    <!-- endbuild -->
+  </body>
+  </html>
